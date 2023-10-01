@@ -1,4 +1,5 @@
 def inpute_data(df):
+    '''Inputing NaN data'''
     df_copy = df.copy() #Copy so as not to change the original
     
     #Inputing NaN categorical values with column mode
