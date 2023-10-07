@@ -3,7 +3,7 @@ def inpute_data(df):
     df_copy = df.copy() #Copy so as not to change the original
     
     #Inputing NaN categorical values with column mode
-    categorical_vars = list(df_copy.select_dtypes(include=["object"]).columns)
+    categorical_vars = list(df_copy.select_dtypes(include=["object"]).columns.values)
     for col in categorical_vars:
 
         if (df_copy[col].isnull().values.any()):
@@ -11,7 +11,7 @@ def inpute_data(df):
     
 
     #Inputing NaN numerical values with column median
-    numerical_vars = list(df_copy.select_dtypes(include=["int64", "float64"]).columns)
+    numerical_vars = list(df_copy.select_dtypes(include=["int64", "float64"]).columns.values)
     for col in numerical_vars:
 
         if (df_copy[col].isnull().values.any()):
