@@ -28,4 +28,4 @@ def make_prediction_file(prediction, test_data, name):
     '''Make_prediction_file'''
 
     result = pd.DataFrame({"PassengerId": test_data.reset_index()["PassengerId"], "Survived": prediction})
-    return result.to_csv(name, index=False)
+    return result.to_csv(name, index=True)
