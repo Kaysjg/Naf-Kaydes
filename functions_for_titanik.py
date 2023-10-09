@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 def inpute_data(df):
     '''Inputing NaN data'''
     df_copy = df.copy() #Copy so as not to change the original
@@ -19,3 +22,10 @@ def inpute_data(df):
     
 
     return df_copy
+
+
+def make_prediction_file(prediction, test_data, name):
+    '''Make_prediction_file'''
+
+    result = pd.DataFrame({"PassengerId": test_data.reset_index()["PassengerId"], "Survived": prediction})
+    return result.to_csv(name, index=False)
