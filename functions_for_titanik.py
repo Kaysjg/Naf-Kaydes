@@ -2,7 +2,6 @@ import pandas as pd
 
 
 def inpute_data(df):
-    '''Inputing NaN data.'''
     df_copy = df.copy() #Copy so as not to change the original
     
     #Inputing NaN categorical values with column mode
@@ -37,7 +36,5 @@ def encode_categorical(df_train, df_test):
 
 
 def make_prediction_file(prediction, test_data, name):
-    '''Make prediction file.'''
-
     result = pd.DataFrame({"PassengerId": test_data.reset_index()["PassengerId"], "Survived": prediction})
     return result.to_csv(name, index=False)
